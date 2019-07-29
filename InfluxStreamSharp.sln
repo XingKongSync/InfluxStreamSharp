@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfluxStreamSharp", "InfluxStreamSharp\InfluxStreamSharp.csproj", "{8E10787F-FED5-413C-8209-45C654B1165A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{C130E6F3-FDD6-4EFD-BAA3-5114B0725752}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E10787F-FED5-413C-8209-45C654B1165A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E10787F-FED5-413C-8209-45C654B1165A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E10787F-FED5-413C-8209-45C654B1165A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E10787F-FED5-413C-8209-45C654B1165A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C130E6F3-FDD6-4EFD-BAA3-5114B0725752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C130E6F3-FDD6-4EFD-BAA3-5114B0725752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C130E6F3-FDD6-4EFD-BAA3-5114B0725752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C130E6F3-FDD6-4EFD-BAA3-5114B0725752}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A13CE968-DAE8-4F52-869C-0A6AAB647F70}
+	EndGlobalSection
+EndGlobal
