@@ -1,4 +1,5 @@
 ﻿using AdysTech.InfluxDB.Client.Net;
+using LogManager;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -84,7 +85,7 @@ namespace InfluxStreamSharp.Influx
         {
             _isTimerRunning = true;
 
-            _logger.LogInfo("Influx写入队列启动");
+            _logger.LogDebug("Influx写入队列启动");
             List<InfluxDatapoint<InfluxValueField>> tempWriteList = new List<InfluxDatapoint<InfluxValueField>>();
             while (_timerIsEnabled)
             {
@@ -98,7 +99,7 @@ namespace InfluxStreamSharp.Influx
                 if (tempWriteList.Count > 0)
                 {
                     InfluxService.Instance.Value.WriteAsync(tempWriteList).Wait();
-                    _logger.LogInfo($"写入InfluxDB记录：{tempWriteList.Count} 条");
+                    _logger.LogDebug($"写入InfluxDB记录：{tempWriteList.Count} 条");
                 }
                 DateTime endWriteTime = DateTime.Now;
 
@@ -108,7 +109,7 @@ namespace InfluxStreamSharp.Influx
                 Task.Delay(delayTime).Wait();
             }
 
-            _logger.LogInfo("Influx写入队列终止");
+            _logger.LogDebug("Influx写入队列终止");
             _isTimerRunning = false;
         }
 

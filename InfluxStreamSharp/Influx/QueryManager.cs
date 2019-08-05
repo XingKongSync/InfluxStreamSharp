@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogManager;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -56,7 +57,7 @@ namespace InfluxStreamSharp.Influx
                 if (_currentPlayStatus != value)
                 {
                     _currentPlayStatus = value;
-                    _logger.LogInfo($"CurrentPlayStatus: {CurrentPlayStatus.ToString()}");
+                    _logger.LogDebug($"CurrentPlayStatus: {CurrentPlayStatus.ToString()}");
                 }
             }
         }

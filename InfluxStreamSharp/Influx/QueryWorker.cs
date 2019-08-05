@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogManager;
+using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -89,7 +90,7 @@ namespace InfluxStreamSharp.Influx
                     InfluxQL.LocalEndTime = buffTimeEnd;
                     string influxQL = InfluxQL.GetInfluxQL();
 
-                    _logger.LogInfo("开始加载Influx数据，IQL：" + influxQL);
+                    _logger.LogDebug("开始加载Influx数据，IQL：" + influxQL);
 
                     //加载当前分区的数据
                     List<InfluxQueryItem<T>> result = InfluxDB.Query<T>(influxQL).Result;
@@ -212,7 +213,7 @@ namespace InfluxStreamSharp.Influx
             if (IfNeedLoad(currentPlayTime))
             {
                 //如果已缓冲的数据持续时间小于一次性缓冲时长的一半，则需要加载数据
-                _logger.LogInfo($"CurrentPlayTime: {currentPlayTime.ToString("yyyy-MM-dd HH:mm:ss")}, 需要预加载数据");
+                _logger.LogDebug($"CurrentPlayTime: {currentPlayTime.ToString("yyyy-MM-dd HH:mm:ss")}, 需要预加载数据");
                 return await LoadDataAsync();
             }
             return false;

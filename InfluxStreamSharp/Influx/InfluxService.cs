@@ -1,4 +1,5 @@
 ﻿using AdysTech.InfluxDB.Client.Net;
+using LogManager;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -58,12 +59,12 @@ namespace InfluxStreamSharp.Influx
         private async Task CreateDatabaseAndRetentionPolicyAsync(string dbName)
         {
             //新建数据库，如果数据库已存在也会成功
-            _logger.LogInfo($"检查数据库 {dbName}");
+            _logger.LogDebug($"检查数据库 {dbName}");
             await influxClient.CreateDatabaseAsync(dbName);
 
             //新建保留策略
             string rpName = GenerateRpName(dbName);//生成约定的保留策略名称
-            _logger.LogInfo($"检查保留策略 {rpName}");
+            _logger.LogDebug($"检查保留策略 {rpName}");
             var rp = new InfluxRetentionPolicy()
             {
                 Name = rpName,
@@ -149,7 +150,7 @@ namespace InfluxStreamSharp.Influx
                     }
                 }
                 watch.Stop();
-                _logger.LogInfo($"查询耗时：{watch.Elapsed.TotalSeconds}s，InfluxQL：{influxQL}");
+                _logger.LogDebug($"查询耗时：{watch.Elapsed.TotalSeconds}s，InfluxQL：{influxQL}");
                 return queryResult;
             }
             catch (Exception ex)

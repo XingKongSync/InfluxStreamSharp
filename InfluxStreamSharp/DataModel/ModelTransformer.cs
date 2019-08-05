@@ -1,4 +1,5 @@
 ﻿using AdysTech.InfluxDB.Client.Net;
+using LogManager;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
