@@ -16,7 +16,7 @@ namespace InfluxStreamSharp.Influx
     /// </summary>
     public class WriteService
     {
-        static Logger _logger = new Logger("WriteService");
+        private static LogService _logger = LogService.Instance.Value;
         public static readonly Lazy<WriteService> Instance = new Lazy<WriteService>(() => new WriteService());
 
         private ConcurrentQueue<InfluxDatapoint<InfluxValueField>> BufferedQueue = new ConcurrentQueue<InfluxDatapoint<InfluxValueField>>();

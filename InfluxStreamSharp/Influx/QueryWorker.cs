@@ -20,7 +20,7 @@ namespace InfluxStreamSharp.Influx
     /// <typeparam name="T"></typeparam>
     public class QueryWorker<T> : IQueryWorker
     {
-        static Logger _logger = new Logger("QueryWorker");
+        private static LogService _logger = LogService.Instance.Value;
 
         private DateTime TimeBegin;
         private DateTime TimeEnd;

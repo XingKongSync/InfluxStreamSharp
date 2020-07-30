@@ -27,7 +27,7 @@ namespace InfluxStreamSharp.Influx
             WairForBuffing
         }
 
-        static Logger _logger = new Logger("QueryManager");
+        private static LogService _logger = LogService.Instance.Value;
 
         public delegate void DataReceivedDelegate(object data);
 

@@ -11,7 +11,7 @@ namespace InfluxStreamSharp.Influx
 {
     public class ChunkedQueryWorker<T>
     {
-        static Logger _logger = new Logger("ChunkedQueryWorker");
+        private static LogService _logger = LogService.Instance.Value;
 
         public enum WorkerStatusEnum
         {

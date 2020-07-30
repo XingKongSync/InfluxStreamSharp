@@ -9,6 +9,7 @@ namespace LogManager
     public enum LogTypeEnum
     {
         LogDebug,
-        LogError
+        LogError,
+        LogTrace
     }
 }

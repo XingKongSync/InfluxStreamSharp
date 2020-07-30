@@ -9,7 +9,7 @@ namespace InfluxStreamSharp.DataModel
 {
     public static class ModelTransformer
     {
-        private static Logger _logger = new Logger("ModelTransformer");
+        private static LogService _logger = LogService.Instance.Value;
 
         /// <summary>
         /// 解析模型对应的Influx表名（Measurement）

@@ -12,7 +12,7 @@ namespace InfluxStreamSharp.Influx
     {
         public static readonly Lazy<InfluxService> Instance = new Lazy<InfluxService>(() => new InfluxService());
 
-        private Logger _logger;
+        private LogService _logger = LogService.Instance.Value;
         private bool _hasInited = false;
         private InfluxDBClient influxClient;
 
@@ -24,7 +24,7 @@ namespace InfluxStreamSharp.Influx
         private long _influxRetentionHours;
         #endregion
 
-        private InfluxService() { _logger = new Logger("InfluxService"); }
+        private InfluxService() { }
 
         public async Task InitAsync(string influxUrl, string influxUName, string influxUPwd, string influxDbName, long influxRetentionHours)
         {
