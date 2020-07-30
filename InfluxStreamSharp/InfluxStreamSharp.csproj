@@ -53,6 +53,7 @@
     <Compile Include="DataModel\DateTimeConverter.cs" />
     <Compile Include="DataModel\InfluxModelAttribute.cs" />
     <Compile Include="DataModel\ModelTransformer.cs" />
+    <Compile Include="Influx\ChunkedQueryWorker.cs" />
     <Compile Include="Influx\InfluxQLTemplet.cs" />
     <Compile Include="Influx\InfluxQueryItem.cs" />
     <Compile Include="Influx\InfluxService.cs" />
